@@ -67,7 +67,20 @@ app.get('/count', async (req, res) => {
 
 app.post("/save",async (req,res)=>{
   
-  const user: UserType = req.body;
+  const values = req.body;
+  const user = {
+    name:values.name,
+    phone:values.phone,
+    email:values.email,
+    college:values.college,
+    earlyBirdWorkshopA:false,
+    earlyBirdWorkshopB:false,
+    amount:"0",
+    paymentId:"$",
+    workshopA:false,
+    workshopB:false,
+    discountValue:"",
+  }
   console.log(user)
 
   const user1 = await User.findOne({email: req.body.email});

@@ -222,24 +222,24 @@ app.post('/checkPromo', async (req, res) => {
   return res.json({valid : false});
 });
 
-app.post("/makePromo", async (req, res) => {
-  const promo: PromoType = {
-    promoCode: req.body.promo,
-    discount : req.body.discount,
-    single : req.body.single,
-    participants: [],
-  };
-  const u = new Promo(promo);
-  u.save((err, promo) => {
-    if (err) {
-      res.send(err);
-      console.log(err);
-    } else {
-      res.json(promo);
-      console.log("promo code save successfully");
-    }
-  });
-});
+// app.post("/makePromo", async (req, res) => {
+//   const promo: PromoType = {
+//     promoCode: req.body.promo,
+//     discount : req.body.discount,
+//     single : req.body.single,
+//     participants: [],
+//   };
+//   const u = new Promo(promo);
+//   u.save((err, promo) => {
+//     if (err) {
+//       res.send(err);
+//       console.log(err);
+//     } else {
+//       res.json(promo);
+//       console.log("promo code save successfully");
+//     }
+//   });
+// });
 
 // app.get("/promos", async (req, res) => {
 //   try {

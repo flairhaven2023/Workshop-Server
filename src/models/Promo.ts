@@ -12,6 +12,10 @@ const promoSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
+    single: {
+      type: Boolean,
+      required: true,
+    },
     participants: [String],
   },
   {

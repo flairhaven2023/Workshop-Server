@@ -217,7 +217,7 @@ app.post('/checkPromo', async (req, res) => {
   // const discount = req.body.discount;
   const promo: any = await Promo.findOne({ promoCode: code });
   if (promo) {
-    return res.json({valid : true, discount: promo.discount});
+    return res.json({valid : true, discount: promo.discount, single : promo.single});
   }
   return res.json({valid : false});
 });
@@ -226,6 +226,7 @@ app.post("/makePromo", async (req, res) => {
   const promo: PromoType = {
     promoCode: req.body.promo,
     discount : req.body.discount,
+    single : req.body.single,
     participants: [],
   };
   const u = new Promo(promo);

@@ -2,6 +2,7 @@
   "name": "workshops-api",
   "version": "1.0.0",
   "description": "api for workshops",
+  "main":"src/index.ts"
   "scripts": {
     "watch": "nodemon src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
